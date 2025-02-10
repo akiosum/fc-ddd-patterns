@@ -18,7 +18,6 @@ export default class OrderItem {
     this._price = price;
     this._productId = productId;
     this._quantity = quantity;
-    this._total = this.total();
   }
 
   get id(): string {
@@ -41,7 +40,11 @@ export default class OrderItem {
     return this._price;
   }
 
-  total(): number {
-    return this._price * this._quantity
+  get subTotalPrice(): number {
+    return this._price * this._quantity;
+  }
+
+  totalPrice(): number {
+    return this._price * this._quantity;
   }
 }
